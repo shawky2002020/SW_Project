@@ -1,0 +1,2 @@
+g++ -o banking_system Implementation.cpp main.cpp -std=c++11
+./banking_system
