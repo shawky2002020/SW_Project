@@ -198,6 +198,7 @@ Customer::Customer(string user, string pass, string name, string id)
     : User(user, pass), fullName(name), nationalID(id) {}
 
 bool Customer::login(string user, string pass) {
+    
     if (username == user && passwordHash == hash(pass) && !isLocked) {
         failedLoginAttempts = 0;
         return true;
