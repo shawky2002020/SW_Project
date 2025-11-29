@@ -26,6 +26,7 @@ public:
     void monitorActivity();
     
     void customerLoop(Customer* customer); 
+    void adminLoop(Admin* admin);
     
     Customer* getCustomerByID(const std::string& id);
     

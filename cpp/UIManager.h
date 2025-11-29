@@ -12,6 +12,7 @@ public:
     static void displayLogin();
     static void displayMainMenu(); 
     static void displayCustomerMenu(); // NEW: Customer Actions Menu
+    static void displayAdminMenu();
     
     // Input Functions
     static int getCustomerChoice();
