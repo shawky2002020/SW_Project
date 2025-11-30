@@ -1,109 +1,103 @@
-# Banking System Console Application
+# **Software Requirements Specification (SRS) – Bank Management System**
 
-## Overview
-This is a **C++ console-based banking system** implemented using **Object-Oriented Programming (OOP)** principles.  
-The system allows customers to create accounts, perform transactions, and manage their profile, while ensuring security, performance, and reliability. All data is stored in files (text or binary), with no external database required.
+## **1. Introduction**
 
----
+### **1.1 Purpose**
+The purpose of this document is to define the requirements for the **Bank Management System (BMS)**, which enables customers to efficiently manage their bank accounts. The system provides features including deposits, withdrawals, fund transfers, bill payments, loan requests, and secure authentication.  
+This document serves as a reference for developers, testers, and stakeholders to understand the system features, constraints, and expected behavior.
 
-## Features
+### **1.2 Scope**
+The Bank Management System will allow customers to:
+- Deposit and withdraw money with real-time balance updates.
+- Transfer funds between accounts and pay common bills.
+- Request loans and receive notifications of approval or rejection.
+- Log in securely with protection against repeated failed login attempts.
 
-### Functional Requirements
+The system is designed to run in a **console environment using C++ with Object-Oriented Programming principles**.  
+All actions will include confirmation messages and input validation to ensure security, reliability, and usability.
 
-1. **Create Account**
-   - Customers can create a new account by entering basic information (name, ID, phone) in a single form.
-   - New accounts are saved immediately after submission.
+### **1.3 Definitions, Acronyms, and Abbreviations**
+| Term | Definition |
+|------|------------|
+| BMS | Bank Management System |
+| UI | User Interface (Console) |
+| OOP | Object-Oriented Programming |
+| ID | Identification Number |
 
-2. **Deposit Money**
-   - Customers can deposit money into their account.
-   - The balance updates immediately, and each deposit is recorded with a transaction ID.
+### **1.4 References**
+- Functional Requirements Document (current document)
+- Non-Functional Requirements Document (current document)
+- C++ Programming Language Documentation
 
-3. **Withdraw Money**
-   - Customers can withdraw money only if sufficient balance exists.
-   - Balance updates instantly after withdrawal.
-
-4. **Check Account Balance**
-   - Displays the current account balance within 2 seconds.
-
-5. **Transfer Money**
-   - Allows customers to transfer money to another account.
-   - Confirmation message shown after successful transfer.
-
-6. **View Transaction History**
-   - Lists all deposits, withdrawals, and transfers for the customer.
-   - Each transaction includes the date, type, and amount.
-
-7. **Log In / Authentication**
-   - Users can log in with a username and password.
-   - Login is blocked after 5 failed attempts.
-
-8. **Edit Customer Information**
-   - Customers can update their phone number or email.
-   - Changes are saved immediately.
-
-9. **Delete Account**
-   - Admin can close a customer account if the balance is zero.
-
-10. **Bill Payment**
-    - Customers can pay common bills (electricity, water).
-    - Success message displayed after payment.
-
-11. **Loan Request**
-    - Customers can request a loan via a simple form.
-    - Notification sent on approval or rejection.
-
-12. **Account Search**
-    - Admin can search accounts by ID or name.
-
-13. **View Customer Profile**
-    - Displays full profile including name, ID, phone, email, balance, and account type.
-
-14. **Account Types**
-    - Supports different account types (Savings / Checking) with minimum balance rules.
-
-15. **Logout**
-    - Users are logged out after 15 minutes of inactivity.
+### **1.5 Overview**
+This SRS document includes:
+- Overall description of the system, including user characteristics, constraints, and assumptions.
+- Detailed functional and non-functional requirements.
+- Visual diagrams such as **Use Case Diagrams, Sequence Diagrams, and Activity Diagrams**.
 
 ---
 
-### Non-Functional Requirements
+## **2. Functional Requirements**
 
-1. **Performance**
-   - Balance inquiries respond within 2 seconds.
-   - Money transfers complete within 3 seconds.
+### **1. Deposit Money**
+- The system shall allow customers to deposit money into their account and update the balance immediately.
+- The system shall record each deposit with a transaction ID.
 
-2. **Security**
-   - Password input is hidden.
-   - Passwords are encrypted.
-   - Accounts locked for 5 minutes after 5 failed login attempts.
+### **2. Withdraw Money**
+- The system shall allow customers to withdraw money only if the balance is sufficient.
+- The system shall update the balance instantly after withdrawal.
 
-3. **Usability**
-   - Clear text-based menu interface.
-   - Confirmation messages shown for successful operations.
+### **3. Check Account Balance**
+- The system shall display the correct account balance within **2 seconds** after request.
 
-4. **Reliability**
-   - All inputs validated to prevent crashes.
-   - Data saved to files to prevent loss after program exit.
+### **4. Transfer Money**
+- The system shall allow customers to transfer money to another account.
+- The system shall display a confirmation message when the transfer is successful.
 
-5. **Maintainability**
-   - Follows OOP principles: encapsulation and modular classes.
-   - Logic separated from UI.
+### **5. Log In / Authentication**
+- The system shall allow users to log in using a username and password.
+- The system shall block login access after **5 failed attempts**.
+
+### **6. Edit Customer Information**
+- The system shall allow customers to update their phone number or email address.
+- The system shall save all changes immediately.
+
+### **7. Delete Account**
+- The system shall allow an admin to close a customer account **only if the balance is zero**.
+
+### **8. Bill Payment**
+- The system shall allow customers to pay common bills (e.g., electricity, water).
+- The system shall show a success message when the payment is processed.
+
+### **9. Loan Request**
+- The system shall allow customers to request a loan using a simple form.
+- The system shall notify the customer when the loan is approved or rejected.
+
+### **10. View Customer Profile**
+- The system shall display the customer’s full profile including:
+  **Name, ID, Phone, Email, Balance, and Account Type**
+
+### **11. Logout**
+- The system shall allow users to safely log out after completing their activities.
 
 ---
 
-### Constraints
-- Implemented in **C++** using OOP principles.
-- Runs in a **console environment**.
-- Data stored in **text or binary files** (no database).
+## **3. Non-Functional Requirements**
+
+### **1. Performance**
+- The system shall respond to balance inquiries within **2 seconds**.
+- The system shall complete money transfers within **3 seconds**.
+
+### **2. Usability**
+- The system shall provide a clear text-based menu interface.
+- All successful operations (deposit, withdrawal, transfer, bill payment) shall display a confirmation message.
+
+### **3. Reliability**
+- The system shall validate all inputs to prevent system crashes due to invalid or unexpected data.
+- The system shall save all data to files to ensure no loss of information after program exit.
+
+### **4. Maintainability**
+- The system shall follow object-oriented principles, including encapsulation and modular class structure.
+- The source code shall separate core business logic (classes) from the user interface (menus).
 
 ---
-
-## Getting Started
-
-### Requirements
-- C++ compiler (e.g., `g++`)
-- Console / terminal environment
-
-### Compilation
-```bash
-g++ main.cpp -o BankingSystem
